@@ -60,6 +60,11 @@ public class DynamicDataSourceAutoConfiguration implements InitializingBean {
         this.dataSourcePropertiesCustomizers = dataSourcePropertiesCustomizers.getIfAvailable();
     }
 
+    /**
+     * 通过providers进行数据源的注入
+     * @param providers
+     * @return
+     */
     @Bean
     @ConditionalOnMissingBean
     public DataSource dataSource(List<DynamicDataSourceProvider> providers) {
